@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+</head>
+<body style="text-align: center;">
+    <h1> Espresso House Tracker måned Mai</h1>
+<div id="stor">0 Kr,-</div>
+<div id="liten">0 Kr,-</div>
+<button id="storKaff">En stor kaffe kr 49,-</button>
+<button id="litenKaff">En liten kaffe kr 30,-</button>
+<script>
+let merKaff = storKaff
+let mindreKaff = litenKaff
+let prisStor = stor
+let prisLiten = liten
+let count = 0
+let count1= 0
+
+storKaff.addEventListener('click', ()=>{
+    count += 49;
+    prisStor.innerHTML = count + ' Kr-,';
+})
+mindreKaff.addEventListener('click', ()=> {
+count1 += 30;
+prisLiten.innerHTML = count1 + ' Kr-,'
+
+
+})
+
+
+</script>
+
+</body>
+</html>
