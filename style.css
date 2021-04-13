@@ -1,0 +1,38 @@
+body{
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(176,148,52,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+button{
+    font-size: 110%;
+    position: relative;
+    top: -45px;
+    
+}
+
+#Kroner {
+    font-size: 110%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+#cofPic{
+    width: 90px;
+    margin-left: 180px;
+    position: relative;
+    top: -60px;
+   
+    
+}
+#cofPic:hover{
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(1deg); }
+    20% { transform: translate(-1px, -1px) rotate(-2deg); }
+    40% { transform: translate(-0px, 0px) rotate(3deg); }
+    60% { transform: translate(1px, 1px) rotate(4deg); }
+    80% { transform: translate(1px, -1px) rotate(-5deg); }
+    1000% { transform: translate(0px, -0px) rotate(6deg); }
+
+  }
