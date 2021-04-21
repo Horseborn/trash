@@ -1,42 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body style="text-align: center;">
-    <h1> Espresso House Tracker måned Mai</h1>
-<div id="Kroner">
-    <div id="stor">0 Kr,-</div>
-    <div id="liten">0 Kr,-</div>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body style="text-align: center">
+    <h1>Espresso House Tracker måned Mai</h1>
+    <p id="idStor">0.5L kaffe</p>
+    <p></p>
+    <div id="Kroner">
+      <div id="stor">0 Kr,-</div>
+      
+      <div id="liten">0 Kr,-</div>
+    </div>
+    <p id="idLiten">0.3L kaffe</p>
+    
 
-</div>
-<img id="cofPic" src="https://no.espressohouse.com/app/uploads/sites/3/2018/08/8_2_coffee_logo-298x300.png" alt="">
-<br>
-<button id="storKaff">En stor kaffe kr 49,-</button>
-<button id="litenKaff">En liten kaffe kr 30,-</button>
-<script>
-let merKaff = storKaff
-let mindreKaff = litenKaff
-let prisStor = stor
-let prisLiten = liten
-let count = 0
-let count1= 0
+    <img
+      id="cofPic"
+      src="https://no.espressohouse.com/app/uploads/sites/3/2018/08/8_2_coffee_logo-298x300.png"
+      alt=""
+    />
+    <br />
+    <button onclick="addStor()" id="storKaff">En stor kaffe kr 42,-</button>
+    <button onclick="addLiten()" id="litenKaff">En liten kaffe kr 36,-</button>
+    <br />
+    <button id="eraseStor" onclick="eraseStor()">Nullstill</button>
+    <button id="eraseLiten" onclick="eraseLiten()">Nullstill</button>
 
-storKaff.addEventListener('click', ()=>{
-    count += 49;
-    prisStor.innerHTML = count + ' Kr-,';
-})
-mindreKaff.addEventListener('click', ()=> {
-count1 += 30;
-prisLiten.innerHTML = count1 + ' Kr-,'
+    <script>
+      let merKaff = storKaff;
+      let mindreKaff = litenKaff;
+      let prisStor = stor;
+      let prisLiten = liten;
+      let count = 0;
+      let count1 = 0;
 
+      // storKaff.addEventListener('click', ()=>{
+      //     count += 49;
+      //     prisStor.innerHTML = count + ' Kr-,';
+      // })
+      // mindreKaff.addEventListener('click', ()=> {
+      // count1 += 30;
+      // prisLiten.innerHTML = count1 + ' Kr-,'
 
-})
+      // })
 
+      function addStor() {
+        if (localStorage.getItem("stor") === null) {
+          localStorage.setItem("stor", "0");
+        }
+        let value = parseInt(localStorage.getItem("stor"));
+        let nyValue = value + 42 + ",-";
 
+        localStorage.setItem("stor", nyValue);
 
+        stor.innerHTML = nyValue;
+      }
 
-</script>
+      function addLiten() {
+        if (localStorage.getItem("liten") === null) {
+          localStorage.setItem("liten", "0");
+        }
+        let value = parseInt(localStorage.getItem("liten"));
+        let nyValue = value + 36 + ",-";
+        localStorage.setItem("liten", nyValue);
 
-</body>
+        liten.innerHTML = nyValue;
+      }
+
+      function eraseStor() {
+        localStorage.setItem("stor", "0");
+        stor.innerHTML = "0 ,-";
+      }
+
+      function eraseLiten(){
+        localStorage.setItem('liten', '0');
+        liten.innerHTML = "0 ,-"
+      }
+    </script>
+  </body>
 </html>
