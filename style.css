@@ -67,8 +67,10 @@ background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,29,6,1) 25%, rgba(
 color: whitesmoke; */
 }
 
-#eraseSmall {
+#eraseLiten {
   border-radius: 20px;
+  margin-top: 30px;
+  margin-right: -450;
 }
 
 #idStor {

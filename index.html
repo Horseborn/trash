@@ -8,12 +8,11 @@
     <p id="idStor">0.5L kaffe</p>
     <p></p>
     <div id="Kroner">
-      <div id="stor">0 Kr,-</div>
-      
-      <div id="liten">0 Kr,-</div>
+      <div id="stor">0,-</div>
+
+      <div id="liten">0,-</div>
     </div>
     <p id="idLiten">0.3L kaffe</p>
-    
 
     <img
       id="cofPic"
@@ -45,27 +44,31 @@
 
       // })
 
+      
+
       function addStor() {
         if (localStorage.getItem("stor") === null) {
-          localStorage.setItem("stor", "0");
+          localStorage.setItem("stor", 0);
         }
         let value = parseInt(localStorage.getItem("stor"));
         let nyValue = value + 42 + ",-";
 
         localStorage.setItem("stor", nyValue);
+        
 
         stor.innerHTML = nyValue;
       }
 
       function addLiten() {
         if (localStorage.getItem("liten") === null) {
-          localStorage.setItem("liten", "0");
+          localStorage.setItem("liten", 0);
         }
         let value = parseInt(localStorage.getItem("liten"));
         let nyValue = value + 36 + ",-";
         localStorage.setItem("liten", nyValue);
 
         liten.innerHTML = nyValue;
+        console.log(nyValue);
       }
 
       function eraseStor() {
@@ -73,9 +76,9 @@
         stor.innerHTML = "0 ,-";
       }
 
-      function eraseLiten(){
-        localStorage.setItem('liten', '0');
-        liten.innerHTML = "0 ,-"
+      function eraseLiten() {
+        localStorage.setItem("liten", "0");
+        liten.innerHTML = "0 ,-";
       }
     </script>
   </body>
